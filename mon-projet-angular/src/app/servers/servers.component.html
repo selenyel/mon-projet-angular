@@ -1,0 +1,29 @@
+<h1 class="idk">Server Adder</h1>
+<hr>
+<br>
+
+<label>{{serverName}}</label>
+<br>
+<br>
+<input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> 
+<!-- $event is the data - reserved word -->
+<br><br>
+<input
+type="text"
+class="form-control"
+[(ngModel)]="serverName"> 
+<br><br>
+<button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+>
+Add Server
+</button>
+
+<p>{{serverCreationStatus}}</p>
+
+<p>{{listOfServers}}</p>
