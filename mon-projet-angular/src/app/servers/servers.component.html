@@ -8,13 +8,38 @@
 <input
 type="text"
 class="form-control"
-(input)="onUpdateServerName($event)"> 
+(input)="onUpdateServerName($event)"
+placeholder="event binding example.."> 
 <!-- $event is the data - reserved word -->
 <br><br>
-<input
-type="text"
-class="form-control"
-[(ngModel)]="serverName"> 
+
+<div class="input--div">
+    <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+    placeholder="two way binding example.."> 
+    
+    <h6 class='input--info' *ngIf="serverName == 'Selen'"> < By default I have 
+        <div class="tooltip"> 
+            {{serverName}} 
+            <span class="tooltiptext">
+                This is also string interpolation!
+            </span> 
+        </div> 
+        because I'm two way binded 
+    </h6>
+    <h6 class='input--info' *ngIf="serverName != 'Selen'"> < But now I have changed it to: 
+        <div class="tooltip"> 
+            {{serverName}} 
+            <span class="tooltiptext">
+                This is also string interpolation!
+            </span> 
+        </div> 
+        because I'm two way binded 
+    </h6>        
+</div>
+
 <br><br>
 <button
     class="btn btn-primary"
@@ -23,7 +48,12 @@ class="form-control"
 >
 Add Server
 </button>
+<h6>(With 2000 ms delay)</h6>
+
 
 <p>{{serverCreationStatus}}</p>
 
 <p>{{listOfServers}}</p>
+
+<app-server></app-server>
+<app-server></app-server>
