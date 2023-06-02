@@ -36,8 +36,8 @@ Display Details
         <p class="space--three">Action</p>
     </div>
     <div 
-        *ngFor="let history of logHistory"
-        [ngStyle] = "{backgroundColor: history.no >= 4 ? 'blue' : 'white', color: history.no>=4 ? 'white':'black'}"
+        *ngFor="let history of logHistory; let i = index"
+        [ngStyle] = "{backgroundColor: i >= 4 ? 'blue' : 'white', color: history.no>=4 ? 'white':'black'}"
     >
     {{history.no}}
     {{history.date}}
