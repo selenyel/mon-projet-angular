@@ -17,6 +17,8 @@ export class ServersComponent {
     },2000)
   }
 
+  servers = ['test server','test server 2']
+
   onCreateServer(){
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName
     console.log('ne')
@@ -27,6 +29,7 @@ export class ServersComponent {
     console.debug('debug')
     this.listOfServers.push(this.serverName);
     this.serverName=''
+    this.servers.push(this.serverName); 
   }
 
   onUpdateServerName(event:any){

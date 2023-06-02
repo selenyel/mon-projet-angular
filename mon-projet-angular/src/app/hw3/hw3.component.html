@@ -1,0 +1,54 @@
+<p>hw3 works!</p>
+
+<ol>
+    <li>Add A button which says 'Display Details'</li>
+    <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+    <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+    <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
+    <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+</ol>
+
+
+<input 
+    [value]="passwordValue"
+/>
+<button 
+    class="button--green"
+    (click)="displayDetailsClicked()"
+>
+Display Details
+</button>
+
+<button (click)="clearAll()" class="button--white">Clear All</button>
+<div>
+    <p *ngIf="logHistory.length >= 1" class="header--sub">With ngFor directive</p>
+    <div 
+        *ngFor="let history of logNumberHistory"
+        [ngStyle] = "{backgroundColor: history >= 5 ? 'blue' : 'white', color: history>=5 ? 'white':'black'}"
+    >
+    {{history}}
+    </div>
+
+    <p *ngIf="logHistory.length >= 1" class="header--sub">All log history with ngFor directive</p>
+    <div class="same-line" *ngIf="logHistory.length >= 1" >
+        <p>#</p>
+        <p class="space--one">Date</p>
+        <p class="space--three">Action</p>
+    </div>
+    <div 
+        *ngFor="let history of logHistory"
+        [ngStyle] = "{backgroundColor: history.no >= 4 ? 'blue' : 'white', color: history.no>=4 ? 'white':'black'}"
+    >
+    {{history.no}}
+    {{history.date}}
+    {{history.action}}
+    </div>
+
+    <p *ngIf="logHistory.length >= 1" class="header--sub"> With JSON pipe</p>
+    <p *ngIf="logHistory.length >= 1">{{logHistory | json}}</p>
+</div>
+
+
+
+
+
