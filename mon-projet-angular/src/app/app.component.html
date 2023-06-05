@@ -302,11 +302,35 @@
   }
 </style>
 <div class="body-container">
-  <app-servers></app-servers>
+  <h1 class="header--purple">Mon Projet Angular</h1>
   <hr>
-  <app-hw2></app-hw2>
-  <hr>
-  <app-hw3></app-hw3>
+  <br>
+
+  <button 
+    *ngFor="let button of buttons"
+    [ngClass]="{ 'margin--left' : button != 'Server Adder'}"
+    class="button__navbar"
+    (click)="navbarClicked($event)"
+  >
+    {{button}}
+  </button>
+
+  <div class="sub-container">
+    <div *ngIf="activeTab === 0">
+      <app-servers *ngIf="activeTab === 0"></app-servers>
+      <hr>
+    </div> 
+    <div *ngIf="activeTab === 1">
+      <app-hw2></app-hw2>
+      <hr>
+    </div>
+    <div *ngIf="activeTab === 2">
+      <app-hw3></app-hw3>
+      <hr>
+    </div>
+  </div>
+
+
 </div>
 
 
