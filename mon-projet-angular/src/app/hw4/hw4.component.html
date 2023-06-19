@@ -18,4 +18,20 @@
 </ol>
 
 <hr/>
-<app-game-control></app-game-control>
+<app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+<br>
+<div style="display: flex; justify-content: space-evenly; ">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-odd *ngFor="let oddNumber of oddNumbers" [oddNumber]="oddNumber">
+            </app-odd>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <app-even *ngFor="let evenNumber of evenNumbers" [evenNumber]="evenNumber">
+            </app-even>
+        </div>
+    </div>
+    
+</div>

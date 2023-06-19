@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-game-control',
@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 
 // @Output() 21
-export class GameControlComponent {
+export class GameControlComponent{
+
+  @Output() intervalFired = new EventEmitter<number>();
 
   currentTime : number = 0;
   addedTime: number = 1000;
@@ -20,7 +22,7 @@ export class GameControlComponent {
       this.isPaused=false;
       this.y =  setInterval( 
         function(){
-          
+            that.intervalFired.emit(that.currentTime + 1);
             that.currentTime++;
         } , that.addedTime 
       )  

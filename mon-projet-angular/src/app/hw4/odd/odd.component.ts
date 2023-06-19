@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-odd',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./odd.component.sass']
 })
 export class OddComponent {
+  @Input() oddNumber: number | undefined;
+
+  
 
 }
