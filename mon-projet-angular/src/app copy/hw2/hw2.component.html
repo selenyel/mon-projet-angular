@@ -1,0 +1,32 @@
+<h1 class="header--purple">Username Input</h1>
+<hr>
+<br>
+<p>hw2 works!</p>
+<ol>
+    <li>Add a Input field which updates a property ('username') via Two-Way-Binding</li>
+    <li>Output the username property via String Interpolation (in a paragraph below the input)</li>
+    <li>Add a button which may only be clicked if the username is NOT an empty string</li>
+    <li>Upon clicking the button, the username should be reset to an empty string</li>
+</ol>
+<hr style="border-top: dashed 1.5px;" />
+
+<input
+type="text"
+[(ngModel)] = 'username'
+placeholder="write your username.."
+/>
+
+<button
+class="hw2-button btn btn-primary"
+(click)="onClearButton()"
+[disabled]="!!!username"
+>Clear</button>
+
+<br>
+
+<div class="username-div">
+    <p>{{username}}</p>
+
+    <h6 *ngIf="username; else usernameElse" class="light--blue">< This is my username by string interpolation</h6>
+    <ng-template #usernameElse> <h6 class="magenta"> This text is created by ngIf's else condition</h6></ng-template>
+</div>

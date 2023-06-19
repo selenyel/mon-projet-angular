@@ -1,0 +1,33 @@
+<p>game-control works!</p>
+
+<div style="display: flex; justify-content: space-between;">
+    <div style="display: flex; justify-content: start">
+        
+        <button 
+        class="button button__green"
+        (click)="onClickPlay($event)"
+        [ngClass]="isActive('play')"
+    > <i class="bi bi-play"></i> Play </button>
+    <button 
+        class="button button__yellow margin_left"
+        [ngClass]="isActive('pause')"
+        (click)="onClickPaused($event)"
+    > <i class="bi bi-pause"></i> Pause </button>
+    </div>
+
+    
+    <div class="glitchBackground">
+        <div class="glitchText">
+            Current Time:
+            <label>{{currentTime}}</label>
+        </div>
+    </div>
+    <div>
+        <label>Up the Timer per: </label>
+        <label>{{addedTime}} MS</label>
+    </div>
+</div>
+
+
+
+

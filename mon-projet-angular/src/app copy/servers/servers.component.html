@@ -1,0 +1,78 @@
+<h1 class="idk">Server Adder</h1>
+<hr>
+<br>
+
+<p>hw1 works!</p>
+
+<ol>
+    <li>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert    </li>
+    <li>Output them beneath each other in the AppComponent    </li>
+    <li>Output a warning or success message in the Components    </li>
+    <li>Style the Components appropriately (maybe some red/ green text?)    </li>
+    <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+</ol>
+<p>Use external or internal templates and styles!</p>
+<p>Feel free to create more components, nest them into each other or play around with different types of selectors!</p>
+
+
+<hr style="border-top: dashed 1.5px;" />
+
+<div style="display: flex; align-items: center; ">
+    <label style="margin-right: 1em;">{{serverName}}</label>
+    <h6> < Change me from input fields!</h6>
+</div>
+
+
+<br>
+<br>
+<input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"
+placeholder="event binding example.."> 
+<!-- $event is the data - reserved word -->
+<br><br>
+
+<div class="input--div">
+    <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+    placeholder="two way binding example.."> 
+    
+    <h6 class='input--info' *ngIf="serverName == 'Selen'"> < By default I have 
+        <div class="tooltip"> 
+            {{serverName}} 
+            <span class="tooltiptext">
+                This is also string interpolation!
+            </span> 
+        </div> 
+        because I'm two way binded 
+    </h6>
+    <h6 class='input--info' *ngIf="serverName != 'Selen'"> < But now I have changed it to: 
+        <div class="tooltip"> 
+            {{serverName}} 
+            <span class="tooltiptext">
+                This is also string interpolation!
+            </span> 
+        </div> 
+        because I'm two way binded 
+    </h6>        
+</div>
+
+<br><br>
+<button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+>
+Add Server
+</button>
+<h6>(With 2000 ms delay)</h6>
+
+
+<p>{{serverCreationStatus}}</p>
+
+<p>{{listOfServers}}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
