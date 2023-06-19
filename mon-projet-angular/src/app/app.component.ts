@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  buttons : string[] = ['Server Adder', 'Username Input', 'Show Password with Log','Bind it!']
+  buttons : string[] = ['Server Adder', 'Username Input', 'Show Password with Log','Bind it!', 'Basic Directive']
   title = 'mon-projet-angular';
   activeTab = 0;
 
