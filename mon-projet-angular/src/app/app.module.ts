@@ -12,8 +12,9 @@ import { Hw4Component } from './hw4/hw4.component';
 import { GameControlComponent } from './hw4/game-control/game-control.component';
 import { OddComponent } from './hw4/odd/odd.component';
 import { EvenComponent } from './hw4/even/even.component'; 
-import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BasicHighlightDirective } from './directives/basic-highlight/basic-highlight.directive';
 import { DirectiveComponent } from './directive/directive.component';
+import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
 
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
 
@@ -30,7 +31,8 @@ import { DirectiveComponent } from './directive/directive.component';
     OddComponent,
     EvenComponent,
     BasicHighlightDirective,
-    DirectiveComponent
+    DirectiveComponent,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
